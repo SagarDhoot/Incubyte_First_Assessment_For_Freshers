@@ -15,7 +15,7 @@ public class StringCalculator {
 	private int getSum(String[] num) throws Exception
 	{
 		int sum=0;
-	
+		ArrayList<String> negative = new ArrayList<String>();
 		HashMap<String, Integer> hash_map=new HashMap<>();
 		
 		String[] str=alphabet.split(",");
@@ -25,6 +25,7 @@ public class StringCalculator {
 			hash_map.put(str[i], i+1);
 		}
 				
+		int flag=0;
 		for(int i=0;i<num.length;i++)
 		{
 			if(hash_map.containsKey(num[i]))
@@ -35,14 +36,23 @@ public class StringCalculator {
 			{
 				if(Integer.parseInt(num[i])<0)
 				{
-					throw new Exception();
+					negative.add(num[i]);
+					flag=1;
 				}
 				sum=sum+Integer.parseInt(num[i]);
 			}
+		}
+		if(flag==1)
+		{
+			String Neg_Numbers="";
+			for(int i=0;i<negative.size();i++)
+			{
+				Neg_Numbers=Neg_Numbers+negative.get(i);
 			}
+			throw new Exception("negatives not allowed: "+Neg_Numbers);
+		}
 		return sum;
 	}
-	
 	
 	public int add(String input) throws Exception
 	{

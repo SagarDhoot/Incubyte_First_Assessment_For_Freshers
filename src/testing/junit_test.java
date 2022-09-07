@@ -37,4 +37,8 @@ public class junit_test {
 	public void singlenegativenumber() throws Exception{
 		calculate.add("a,b,c,d,5,a,-11");
 	}
+	@Test
+	public void shouldHaveNegativeNumbersInException() throws Exception {
+		calculate.add("-1,-2,3");
+	}
 }
