@@ -29,5 +29,8 @@ public class junit_test {
 	public void unknownamountofnumbers() {
 		assertEquals(calculate.add("2,20,40,50,80"),192);
 	}
-
+	@Test
+	public void alphabetsaddition() {
+		assertEquals(calculate.add("a,b,c,d,5,a,10"),26);
+	}
 }

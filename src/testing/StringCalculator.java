@@ -1,7 +1,8 @@
 package testing;
-
+import java.util.*;
 public class StringCalculator {
-
+	private final String alphabet="a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z";
+	
 	private boolean isEmpty(String input)
 	{
 		int len=input.length();
@@ -14,10 +15,27 @@ public class StringCalculator {
 	private int getSum(String[] num)
 	{
 		int sum=0;
+	
+		HashMap<String, Integer> hash_map=new HashMap<>();
+		
+		String[] str=alphabet.split(",");
+		
+		for(int i=0;i<26;i++)
+		{
+			hash_map.put(str[i], i+1);
+		}
+				
 		for(int i=0;i<num.length;i++)
 		{
-			sum=sum+Integer.parseInt(num[i]);
-		}
+			if(hash_map.containsKey(num[i]))
+			{
+				sum=sum+hash_map.get(num[i]);
+			}
+			else
+			{
+				sum=sum+Integer.parseInt(num[i]);
+			}
+			}
 		return sum;
 	}
 	
