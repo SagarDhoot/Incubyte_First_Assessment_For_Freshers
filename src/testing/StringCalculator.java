@@ -11,12 +11,17 @@ public class StringCalculator {
 		}
 		return false;
 	}
-	
-	private int getsum(String[] num)
+	private int getSum(String[] num)
 	{
-		return Integer.parseInt(num[0])+Integer.parseInt(num[1]);
+		int sum=0;
+		for(int i=0;i<num.length;i++)
+		{
+			sum=sum+Integer.parseInt(num[i]);
+		}
+		return sum;
 	}
-	public int stringcalculate(String input)
+	
+	public int add(String input)
 	{
 		String [] num=input.split(",");
 		if(isEmpty(input))
@@ -29,7 +34,7 @@ public class StringCalculator {
 		}
 		else
 		{
-			return getsum(num);
+			return getSum(num);
 		}
 	}
 //	public static void main(String[] args) {

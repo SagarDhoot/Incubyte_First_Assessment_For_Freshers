@@ -15,15 +15,19 @@ public class junit_test {
 	}
 	@Test
 	public void emptystringtestreturnszero() {
-		assertEquals(calculate.stringcalculate(""),0);
+		assertEquals(calculate.add(""),0);
 	}
 	@Test
 	public void singlestringtestreturnsinteger() {
-		assertEquals(calculate.stringcalculate("100"),100);
+		assertEquals(calculate.add("50"),50);
 	}
 	@Test
 	public void addtwonumbers() {
-		assertEquals(calculate.stringcalculate("1,2"),3);
+		assertEquals(calculate.add("1,2"),3);
+	}
+	@Test
+	public void unknownamountofnumbers() {
+		assertEquals(calculate.add("2,20,40,50,80"),192);
 	}
 
 }
