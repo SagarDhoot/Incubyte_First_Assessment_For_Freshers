@@ -39,7 +39,10 @@ public class StringCalculator {
 					negative.add(num[i]);
 					flag=1;
 				}
-				sum=sum+Integer.parseInt(num[i]);
+				if(Integer.parseInt(num[i])<1000)
+				{
+					sum=sum+Integer.parseInt(num[i]);
+				}
 			}
 		}
 		if(flag==1)

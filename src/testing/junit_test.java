@@ -41,4 +41,8 @@ public class junit_test {
 	public void shouldHaveNegativeNumbersInException() throws Exception {
 		calculate.add("-1,-2,3");
 	}
+	@Test
+	public void numbergreaterthanthousand() throws Exception {
+		assertEquals(calculate.add("2,1001"),2);
+	}
 }
