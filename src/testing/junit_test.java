@@ -21,5 +21,9 @@ public class junit_test {
 	public void singlestringtestreturnsinteger() {
 		assertEquals(calculate.stringcalculate("100"),100);
 	}
+	@Test
+	public void addtwonumbers() {
+		assertEquals(calculate.stringcalculate("1,2"),3);
+	}
 
 }

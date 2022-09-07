@@ -11,13 +11,26 @@ public class StringCalculator {
 		}
 		return false;
 	}
+	
+	private int getsum(String[] num)
+	{
+		return Integer.parseInt(num[0])+Integer.parseInt(num[1]);
+	}
 	public int stringcalculate(String input)
 	{
+		String [] num=input.split(",");
 		if(isEmpty(input))
 		{
 			return 0; 
 		}
-		return Integer.parseInt(input);
+		if(num.length==1)
+		{
+			return Integer.parseInt(num[0]);
+		}
+		else
+		{
+			return getsum(num);
+		}
 	}
 //	public static void main(String[] args) {
 //		// TODO Auto-generated method stub
