@@ -3,7 +3,7 @@ import java.util.*;
 public class StringCalculator {
 	private final String alphabet="a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z";
 	
-	private boolean isEmpty(String input)
+	private boolean isEmpty(String input) throws Exception
 	{
 		int len=input.length();
 		if(len==0)
@@ -12,7 +12,7 @@ public class StringCalculator {
 		}
 		return false;
 	}
-	private int getSum(String[] num)
+	private int getSum(String[] num) throws Exception
 	{
 		int sum=0;
 	
@@ -33,13 +33,18 @@ public class StringCalculator {
 			}
 			else
 			{
+				if(Integer.parseInt(num[i])<0)
+				{
+					throw new Exception();
+				}
 				sum=sum+Integer.parseInt(num[i]);
 			}
 			}
 		return sum;
 	}
 	
-	public int add(String input)
+	
+	public int add(String input) throws Exception
 	{
 		String [] num=input.split(",");
 		if(isEmpty(input))

@@ -14,23 +14,27 @@ public class junit_test {
 		calculate=new StringCalculator();
 	}
 	@Test
-	public void emptystringtestreturnszero() {
+	public void emptystringtestreturnszero() throws Exception{
 		assertEquals(calculate.add(""),0);
 	}
 	@Test
-	public void singlestringtestreturnsinteger() {
+	public void singlestringtestreturnsinteger() throws Exception{
 		assertEquals(calculate.add("50"),50);
 	}
 	@Test
-	public void addtwonumbers() {
+	public void addtwonumbers() throws Exception{
 		assertEquals(calculate.add("1,2"),3);
 	}
 	@Test
-	public void unknownamountofnumbers() {
+	public void unknownamountofnumbers() throws Exception{
 		assertEquals(calculate.add("2,20,40,50,80"),192);
 	}
 	@Test
-	public void alphabetsaddition() {
+	public void alphabetsaddition() throws Exception{
 		assertEquals(calculate.add("a,b,c,d,5,a,10"),26);
+	}
+	@Test
+	public void singlenegativenumber() throws Exception{
+		calculate.add("a,b,c,d,5,a,-11");
 	}
 }
